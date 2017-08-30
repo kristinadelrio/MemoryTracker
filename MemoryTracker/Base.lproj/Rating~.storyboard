@@ -59,7 +59,7 @@
                                 <rect key="frame" x="267" y="28" width="40" height="40"/>
                                 <state key="normal" image="trophy (1)"/>
                                 <connections>
-                                    <segue destination="wXa-lm-Ddp" kind="show" id="jOD-rn-4JC"/>
+                                    <segue destination="p7K-tQ-itL" kind="show" id="jOD-rn-4JC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYp-p0-JlC">
@@ -110,6 +110,24 @@
             </objects>
             <point key="canvasLocation" x="-79.710144927536234" y="136.95652173913044"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Yzp-2t-ay7">
+            <objects>
+                <viewController id="p7K-tQ-itL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YoC-fl-1vP"/>
+                        <viewControllerLayoutGuide type="bottom" id="DJ3-Kz-RL4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hlK-hI-B7y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cmp-SZ-Tzr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940" y="-261"/>
+        </scene>
         <!--Game-->
         <scene sceneID="bv6-TR-ydz">
             <objects>
@@ -117,14 +135,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WUH-1S-br1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="528" y="137"/>
-        </scene>
-        <!--Rating-->
-        <scene sceneID="jrg-Wo-BZK">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Rating" id="wXa-lm-Ddp" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fqd-kX-DDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="940" y="-261"/>
         </scene>
     </scenes>
     <resources>

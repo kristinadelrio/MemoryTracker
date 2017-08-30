@@ -14,6 +14,8 @@
 		A987D1B71F57349C00CCF677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A987D1B51F57349C00CCF677 /* LaunchScreen.storyboard */; };
 		A987D1C01F5734E200CCF677 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A987D1BE1F5734E200CCF677 /* Game.storyboard */; };
 		A987D1C21F573F0300CCF677 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1C11F573F0300CCF677 /* GameController.swift */; };
+		A987D1C91F5743B800CCF677 /* Rating.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A987D1C71F5743B800CCF677 /* Rating.storyboard */; };
+		A987D1CB1F5743CC00CCF677 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1CA1F5743CC00CCF677 /* RatingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		A987D1B81F57349C00CCF677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A987D1BF1F5734E200CCF677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Game.storyboard; sourceTree = "<group>"; };
 		A987D1C11F573F0300CCF677 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		A987D1C81F5743B800CCF677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Rating.storyboard; sourceTree = "<group>"; };
+		A987D1CA1F5743CC00CCF677 /* RatingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			children = (
 				A987D1C41F573F4500CCF677 /* menu */,
 				A987D1C31F573F3D00CCF677 /* game */,
+				A987D1CC1F5743D100CCF677 /* Rating */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -100,6 +105,15 @@
 				A987D1B81F57349C00CCF677 /* Info.plist */,
 			);
 			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		A987D1CC1F5743D100CCF677 /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				A987D1C71F5743B800CCF677 /* Rating.storyboard */,
+				A987D1CA1F5743CC00CCF677 /* RatingController.swift */,
+			);
+			name = Rating;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +178,7 @@
 				A987D1B71F57349C00CCF677 /* LaunchScreen.storyboard in Resources */,
 				A987D1B41F57349C00CCF677 /* Assets.xcassets in Resources */,
 				A987D1B21F57349C00CCF677 /* Main.storyboard in Resources */,
+				A987D1C91F5743B800CCF677 /* Rating.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +191,7 @@
 			files = (
 				A987D1AF1F57349C00CCF677 /* MenuController.swift in Sources */,
 				A987D1C21F573F0300CCF677 /* GameController.swift in Sources */,
+				A987D1CB1F5743CC00CCF677 /* RatingController.swift in Sources */,
 				A987D1AD1F57349C00CCF677 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +221,14 @@
 				A987D1BF1F5734E200CCF677 /* Base */,
 			);
 			name = Game.storyboard;
+			sourceTree = "<group>";
+		};
+		A987D1C71F5743B800CCF677 /* Rating.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A987D1C81F5743B800CCF677 /* Base */,
+			);
+			name = Rating.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
