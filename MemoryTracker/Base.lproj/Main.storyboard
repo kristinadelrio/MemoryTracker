@@ -1,26 +1,114 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Menu Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MenuController" customModule="MemoryTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brain" translatesAutoresizingMaskIntoConstraints="NO" id="yCM-0N-0Kv">
+                                <rect key="frame" x="0.0" y="184" width="414" height="368"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="m3u-3B-1Ls">
+                                <rect key="frame" x="20" y="560" width="374" height="29"/>
+                                <segments>
+                                    <segment title="Easy"/>
+                                    <segment title="Normal"/>
+                                    <segment title="Hard"/>
+                                </segments>
+                                <color key="tintColor" red="0.18332526087760925" green="0.64323627948760986" blue="0.87216895818710327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSJ-WB-U03">
+                                <rect key="frame" x="354" y="28" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Cii-30-mUh"/>
+                                    <constraint firstAttribute="width" constant="40" id="lVU-88-5Q5"/>
+                                </constraints>
+                                <state key="normal" image="speaker"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try your memory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81L-B3-Ufo">
+                                <rect key="frame" x="20" y="122" width="374" height="54"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="45"/>
+                                <color key="textColor" red="0.58561347926267282" green="0.10742183234602751" blue="0.11255239606697862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ag3-r4-SXe">
+                                <rect key="frame" x="306" y="28" width="40" height="40"/>
+                                <state key="normal" image="trophy (1)"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYp-p0-JlC">
+                                <rect key="frame" x="20" y="613" width="374" height="59"/>
+                                <color key="backgroundColor" red="0.99307733774185181" green="0.8172953724861145" blue="0.090355075895786285" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="7PL-xn-6EG" kind="show" id="6O6-TV-UMO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IYp-p0-JlC" firstAttribute="top" secondItem="m3u-3B-1Ls" secondAttribute="bottom" constant="25" id="5Ah-Be-q2D">
+                                <variation key="heightClass=compact-widthClass=compact" constant="8" symbolic="YES"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="8" symbolic="YES"/>
+                            </constraint>
+                            <constraint firstItem="yCM-0N-0Kv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7lo-4K-xni"/>
+                            <constraint firstItem="Ag3-r4-SXe" firstAttribute="height" secondItem="JSJ-WB-U03" secondAttribute="height" id="8fb-hr-A0Z"/>
+                            <constraint firstItem="m3u-3B-1Ls" firstAttribute="top" secondItem="yCM-0N-0Kv" secondAttribute="bottom" constant="8" symbolic="YES" id="ANp-T1-5Tr"/>
+                            <constraint firstItem="yCM-0N-0Kv" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="AUG-pm-wmb"/>
+                            <constraint firstItem="m3u-3B-1Ls" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BpV-Mh-IdX"/>
+                            <constraint firstItem="IYp-p0-JlC" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="C8y-ND-C9Q"/>
+                            <constraint firstItem="yCM-0N-0Kv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DMI-R8-d6t"/>
+                            <constraint firstItem="Ag3-r4-SXe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="GgF-Og-rTH"/>
+                            <constraint firstItem="IYp-p0-JlC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="HsZ-fT-yyA"/>
+                            <constraint firstItem="JSJ-WB-U03" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Lbv-Pr-2bv"/>
+                            <constraint firstAttribute="trailing" secondItem="81L-B3-Ufo" secondAttribute="trailing" constant="20" symbolic="YES" id="Ls8-Ym-Osn"/>
+                            <constraint firstItem="JSJ-WB-U03" firstAttribute="leading" secondItem="Ag3-r4-SXe" secondAttribute="trailing" constant="8" symbolic="YES" id="Q1L-in-rtY"/>
+                            <constraint firstItem="yCM-0N-0Kv" firstAttribute="top" secondItem="81L-B3-Ufo" secondAttribute="bottom" constant="8" symbolic="YES" id="Rf3-OS-eiO"/>
+                            <constraint firstItem="Ag3-r4-SXe" firstAttribute="width" secondItem="JSJ-WB-U03" secondAttribute="width" id="TPz-le-P6P"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="m3u-3B-1Ls" secondAttribute="trailing" id="V3q-Jk-czl"/>
+                            <constraint firstItem="81L-B3-Ufo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="XjT-Tg-5mM"/>
+                            <constraint firstItem="IYp-p0-JlC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ehv-Dl-6cY"/>
+                            <constraint firstAttribute="trailing" secondItem="JSJ-WB-U03" secondAttribute="trailing" constant="20" symbolic="YES" id="evO-Gn-IBh"/>
+                            <constraint firstAttribute="trailing" secondItem="yCM-0N-0Kv" secondAttribute="trailing" id="kRp-BE-nRX"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-79.710144927536234" y="136.95652173913044"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="bv6-TR-ydz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Game" id="7PL-xn-6EG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WUH-1S-br1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="528" y="137"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="brain" width="800" height="632"/>
+        <image name="speaker" width="128" height="128"/>
+        <image name="trophy (1)" width="128" height="128"/>
+    </resources>
 </document>
