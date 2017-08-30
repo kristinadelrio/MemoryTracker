@@ -20,8 +20,16 @@ class GameController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pause = UIButton()
-        pause.pauseStyle()
+        initPauseButtonLayer()
+    }
+    
+    func initPauseButtonLayer() {
+        pause.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.6)
+        
+        pause.imageView?.contentMode = .scaleAspectFit
+        pause.tintColor = UIColor(displayP3Red: 0.986, green: 0.909, blue: 0.921, alpha: 1)
+        pause.setImage(#imageLiteral(resourceName: "pause").withRenderingMode(.alwaysTemplate), for: .normal)
+        
         pause.addTarget(self, action: #selector(turnOffpause), for: .touchUpInside)
     }
     
@@ -74,17 +82,6 @@ class GameController: UIViewController {
         
         detailsController.onHomeTap = { [weak self] in
             self?.turnToHome()
-        
         }
-    }
-}
-
-extension UIButton {
-    
-    func pauseStyle() {
-        backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.9)
-        
-        imageView?.contentMode = .scaleAspectFit
-        setImage(#imageLiteral(resourceName: "pause").withRenderingMode(.alwaysTemplate), for: .normal)
     }
 }

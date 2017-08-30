@@ -151,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56a-rl-Fxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1610" y="-128"/>
+            <point key="canvasLocation" x="1664" y="-132"/>
         </scene>
         <!--Game Map Controller-->
         <scene sceneID="Ew8-io-z4b">
@@ -160,12 +160,12 @@
                     <view key="view" contentMode="scaleToFill" id="xsT-cC-v9r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="647.33333333333326"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <color key="backgroundColor" red="0.98605746030807495" green="0.90932422876358032" blue="0.92102807760238647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8E-wN-4Ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1609" y="232"/>
+            <point key="canvasLocation" x="1664" y="231"/>
         </scene>
     </scenes>
     <resources>
