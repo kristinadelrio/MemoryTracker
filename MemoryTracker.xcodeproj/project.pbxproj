@@ -16,6 +16,8 @@
 		A987D1C21F573F0300CCF677 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1C11F573F0300CCF677 /* GameController.swift */; };
 		A987D1C91F5743B800CCF677 /* Rating.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A987D1C71F5743B800CCF677 /* Rating.storyboard */; };
 		A987D1CB1F5743CC00CCF677 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1CA1F5743CC00CCF677 /* RatingController.swift */; };
+		A987D1CE1F57481500CCF677 /* PanelControlController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1CD1F57481500CCF677 /* PanelControlController.swift */; };
+		A987D1D01F57492900CCF677 /* GameMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1CF1F57492900CCF677 /* GameMapController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		A987D1C11F573F0300CCF677 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		A987D1C81F5743B800CCF677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Rating.storyboard; sourceTree = "<group>"; };
 		A987D1CA1F5743CC00CCF677 /* RatingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
+		A987D1CD1F57481500CCF677 /* PanelControlController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelControlController.swift; sourceTree = "<group>"; };
+		A987D1CF1F57492900CCF677 /* GameMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMapController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				A987D1BE1F5734E200CCF677 /* Game.storyboard */,
 				A987D1C11F573F0300CCF677 /* GameController.swift */,
+				A987D1CD1F57481500CCF677 /* PanelControlController.swift */,
+				A987D1CF1F57492900CCF677 /* GameMapController.swift */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -189,9 +195,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A987D1CE1F57481500CCF677 /* PanelControlController.swift in Sources */,
 				A987D1AF1F57349C00CCF677 /* MenuController.swift in Sources */,
 				A987D1C21F573F0300CCF677 /* GameController.swift in Sources */,
 				A987D1CB1F5743CC00CCF677 /* RatingController.swift in Sources */,
+				A987D1D01F57492900CCF677 /* GameMapController.swift in Sources */,
 				A987D1AD1F57349C00CCF677 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

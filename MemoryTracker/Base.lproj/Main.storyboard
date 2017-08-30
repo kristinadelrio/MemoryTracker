@@ -57,7 +57,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ag3-r4-SXe">
                                 <rect key="frame" x="267" y="28" width="40" height="40"/>
-                                <state key="normal" image="trophy (1)"/>
+                                <state key="normal" image="trophy"/>
                                 <connections>
                                     <segue destination="wXa-lm-Ddp" kind="show" id="jOD-rn-4JC"/>
                                 </connections>
@@ -116,7 +116,7 @@
                 <viewControllerPlaceholder storyboardName="Game" id="7PL-xn-6EG" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WUH-1S-br1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="528" y="137"/>
+            <point key="canvasLocation" x="450" y="245"/>
         </scene>
         <!--Rating-->
         <scene sceneID="jrg-Wo-BZK">
@@ -124,12 +124,12 @@
                 <viewControllerPlaceholder storyboardName="Rating" id="wXa-lm-Ddp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fqd-kX-DDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="-261"/>
+            <point key="canvasLocation" x="454" y="10"/>
         </scene>
     </scenes>
     <resources>
         <image name="brain" width="800" height="632"/>
         <image name="speakerOn" width="128" height="128"/>
-        <image name="trophy (1)" width="128" height="128"/>
+        <image name="trophy" width="128" height="128"/>
     </resources>
 </document>
