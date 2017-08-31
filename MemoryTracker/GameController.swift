@@ -16,6 +16,7 @@ class GameController: UIViewController {
     var gameMapController: GameMapController!
     
     var pause = UIButton()
+    var timeLimit: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +25,6 @@ class GameController: UIViewController {
         
         GameLogic.shared.presentScore = { [weak self] score in
             self?.showScore(score: score)
-        }
-        
-        gameMapController.gameOver = { [weak self] in
-            self?.saveScore()
-        }
-        
-        detailsController.timeOver = { [weak self] in
-            self?.saveScore()
         }
     }
     
@@ -71,6 +64,11 @@ class GameController: UIViewController {
     // presents current score
     func showScore(score: Int) {
         detailsController.present(score: Double(score))
+    }
+    
+    func gameOver() {
+        detailsController.stopTimer()
+        saveScore()
     }
     
     // Save score in rating desk
@@ -113,11 +111,15 @@ class GameController: UIViewController {
     func prepareGameMapController(controller: GameMapController) {
         gameMapController = controller
         
+        gameMapController.gameOver = { [weak self] in
+            self?.gameOver()
+        }
     }
     
     // binds methods between details and game scene
     func prepareControlPanelController(controller: PanelControlController) {
         detailsController = controller
+        detailsController.timeConstraints = timeLimit ?? 60.0
         
         detailsController.onPauseTap = { [weak self] state in
             self?.turnOnPause(state: state)
@@ -125,6 +127,10 @@ class GameController: UIViewController {
         
         detailsController.onHomeTap = { [weak self] in
             self?.turnToHome()
+        }
+        
+        detailsController.timeOver = { [weak self] in
+            self?.gameOver()
         }
     }
 }

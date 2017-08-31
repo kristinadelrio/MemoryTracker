@@ -49,6 +49,11 @@ class PanelControlController: UIViewController {
             timeLabel.text = TimeInterval.toString(timeConstraints)
         }
     }
+    
+    func stopTimer() {
+        timer.invalidate()
+        isTimerRunning = false
+    }
 
     // Shows current score in label
     func present(score: Double) {
@@ -58,8 +63,7 @@ class PanelControlController: UIViewController {
     // Sends event that pause taped
     @IBAction func pauseTap(_ sender: UIButton) {
         if isPause == false {
-            timer.invalidate()
-            isTimerRunning = false
+            stopTimer()
             isPause = true
             
         } else {

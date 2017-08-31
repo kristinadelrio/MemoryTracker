@@ -59,7 +59,7 @@
                                 <rect key="frame" x="267" y="28" width="40" height="40"/>
                                 <state key="normal" image="trophy"/>
                                 <connections>
-                                    <segue destination="wXa-lm-Ddp" kind="show" id="jOD-rn-4JC"/>
+                                    <segue destination="wXa-lm-Ddp" kind="show" identifier="RatingControllerSegue" id="jOD-rn-4JC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYp-p0-JlC">
@@ -70,7 +70,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7PL-xn-6EG" kind="show" id="6O6-TV-UMO"/>
+                                    <segue destination="7PL-xn-6EG" kind="show" identifier="GameControllerSegue" id="6O6-TV-UMO"/>
                                 </connections>
                             </button>
                         </subviews>
