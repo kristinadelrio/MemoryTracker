@@ -9,27 +9,59 @@
 import UIKit
 
 class RatingController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    var scoreList: [UserScore]?
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func moveRatingToTrash(_ sender: UIBarButtonItem) {
+        createScoreAlert(title: "Do you really want clean scores?" , messege: "Your records will be empty")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    /// Close controller
+    @IBAction func close(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
-    */
+    
+    func clearScores() {
+        scoreList?.removeAll()
+        tableView.reloadData()
+        
+        // delete from storage
+    }
+    
+    /// Creates alert with 2 action OK and Cancel
+    func createScoreAlert(title: String, messege: String) {
+        let alert = UIAlertController(title: title, message: messege, preferredStyle: .alert)
+        
+        // OK action
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] (action) in
+            self?.clearScores()
+        }))
+        
+        // Cancel action
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion:  nil)
+    }
+}
 
+extension RatingController:  UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return scoreList?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ratingCell", for: indexPath) as? RatingCell,
+            let score = scoreList?[indexPath.row] {
+            cell.generate(with: score)
+            
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
 }
