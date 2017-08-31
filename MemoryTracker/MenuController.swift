@@ -52,11 +52,11 @@ class MenuController: UIViewController {
         if let soundState = UserDefaults.standard.value(forKey: "soundState") as? Bool {
             if soundState != true {
                 soundButton.setImage(#imageLiteral(resourceName: "speakerOn"), for: .normal)
-                //audioPlayer.play()
+                audioPlayer.play()
                 
             } else {
                 soundButton.setImage(#imageLiteral(resourceName: "speakerOff"), for: .normal)
-                //audioPlayer.stop()
+                audioPlayer.stop()
             }
             
             UserDefaults.standard.set(!soundState, forKey: "soundState")
@@ -65,7 +65,7 @@ class MenuController: UIViewController {
     
     func initMelody() {
         do {
-            if let musicFile = Bundle.main.path(forResource: "opening", ofType: "mp3") {
+            if let musicFile = Bundle.main.path(forResource: "melody", ofType: "mp3") {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: musicFile))
             }
             

@@ -18,6 +18,7 @@
 		A987D1CB1F5743CC00CCF677 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1CA1F5743CC00CCF677 /* RatingController.swift */; };
 		A987D1CE1F57481500CCF677 /* PanelControlController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1CD1F57481500CCF677 /* PanelControlController.swift */; };
 		A987D1D01F57492900CCF677 /* GameMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1CF1F57492900CCF677 /* GameMapController.swift */; };
+		A987D1D41F57F7E000CCF677 /* melody.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A987D1D31F57F7E000CCF677 /* melody.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		A987D1CA1F5743CC00CCF677 /* RatingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
 		A987D1CD1F57481500CCF677 /* PanelControlController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelControlController.swift; sourceTree = "<group>"; };
 		A987D1CF1F57492900CCF677 /* GameMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMapController.swift; sourceTree = "<group>"; };
+		A987D1D31F57F7E000CCF677 /* melody.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = melody.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		A987D1AB1F57349C00CCF677 /* MemoryTracker */ = {
 			isa = PBXGroup;
 			children = (
+				A987D1D51F57F7E600CCF677 /* Music */,
 				A987D1C61F573F5D00CCF677 /* SupportingFiles */,
 				A987D1C51F573F4C00CCF677 /* Classes */,
 			);
@@ -120,6 +123,14 @@
 				A987D1CA1F5743CC00CCF677 /* RatingController.swift */,
 			);
 			name = Rating;
+			sourceTree = "<group>";
+		};
+		A987D1D51F57F7E600CCF677 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				A987D1D31F57F7E000CCF677 /* melody.mp3 */,
+			);
+			name = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A987D1D41F57F7E000CCF677 /* melody.mp3 in Resources */,
 				A987D1C01F5734E200CCF677 /* Game.storyboard in Resources */,
 				A987D1B71F57349C00CCF677 /* LaunchScreen.storyboard in Resources */,
 				A987D1B41F57349C00CCF677 /* Assets.xcassets in Resources */,
@@ -380,6 +392,7 @@
 				A987D1BD1F57349C00CCF677 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
