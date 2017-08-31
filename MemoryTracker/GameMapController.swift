@@ -21,6 +21,8 @@ class GameMapController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        putCardsOnTheDesk()
+        
         logic.closeIfNeeded = { [weak self] in
             self?.closeCard()
         }
@@ -28,8 +30,17 @@ class GameMapController: UIViewController {
         logic.deleteCards = { [weak self] in
             self?.deleteCard()
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        putCards()
+        sleep(2)
+        for subview in gameScene.subviews {
+            if let subview = subview as? CardView {
+                subview.setCardBack()
+            }
+        }
     }
     
     // Func for recognizing card
@@ -56,14 +67,15 @@ class GameMapController: UIViewController {
         openedCard = []
     }
     
+    // Removes cards from desk
     func deleteCard() {
         openedCard[0].removeFromSuperview()
         openedCard[1].removeFromSuperview()
         
         openedCard = []
-
     }
     
+    // Determinates if game over
     func isGameSceneEmpty() {
         if gameScene.subviews.count == 2 {
             gameOver?()
@@ -71,7 +83,7 @@ class GameMapController: UIViewController {
     }
     
     // Puts cards in the map
-    func putCards(rawCount: Int = 5, columnCount: Int = 4) {
+    func putCardsOnTheDesk(rawCount: Int = 5, columnCount: Int = 4) {
         var xPosition: CGFloat = 0
         var yPosition: CGFloat = 0
         
@@ -96,7 +108,7 @@ class GameMapController: UIViewController {
         let card = CardView(frame: rect)
         
         card.cardFace = UIImage(named: "\(mapManager.imageName[imageIndex])")
-        card.setCardBack()
+        card.setCardFace()
         
         card.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCardTap(sender:))))
         gameScene.addSubview(card)

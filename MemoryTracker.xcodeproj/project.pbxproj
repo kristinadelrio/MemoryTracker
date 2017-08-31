@@ -28,6 +28,7 @@
 		A987D1E31F5862E100CCF677 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1E21F5862E100CCF677 /* User.swift */; };
 		A987D1E51F58704300CCF677 /* RatingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1E41F58704300CCF677 /* RatingStorage.swift */; };
 		A987D1E71F587D1100CCF677 /* ExtensionForDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1E61F587D1100CCF677 /* ExtensionForDate.swift */; };
+		A987D1EC1F588DD100CCF677 /* ExtensionForTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1EB1F588DD100CCF677 /* ExtensionForTimeInterval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		A987D1E21F5862E100CCF677 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A987D1E41F58704300CCF677 /* RatingStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingStorage.swift; sourceTree = "<group>"; };
 		A987D1E61F587D1100CCF677 /* ExtensionForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionForDate.swift; sourceTree = "<group>"; };
+		A987D1EB1F588DD100CCF677 /* ExtensionForTimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionForTimeInterval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		A987D1AB1F57349C00CCF677 /* MemoryTracker */ = {
 			isa = PBXGroup;
 			children = (
+				A987D1EA1F588DA800CCF677 /* Utilities */,
 				A987D1D51F57F7E600CCF677 /* Music */,
 				A987D1C61F573F5D00CCF677 /* SupportingFiles */,
 				A987D1C51F573F4C00CCF677 /* Classes */,
@@ -147,7 +150,6 @@
 				A987D1E01F5860E300CCF677 /* RatingCell.swift */,
 				A987D1E21F5862E100CCF677 /* User.swift */,
 				A987D1E41F58704300CCF677 /* RatingStorage.swift */,
-				A987D1E61F587D1100CCF677 /* ExtensionForDate.swift */,
 			);
 			name = Rating;
 			sourceTree = "<group>";
@@ -158,6 +160,15 @@
 				A987D1D31F57F7E000CCF677 /* melody.mp3 */,
 			);
 			name = Music;
+			sourceTree = "<group>";
+		};
+		A987D1EA1F588DA800CCF677 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A987D1E61F587D1100CCF677 /* ExtensionForDate.swift */,
+				A987D1EB1F588DD100CCF677 /* ExtensionForTimeInterval.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A987D1E31F5862E100CCF677 /* User.swift in Sources */,
+				A987D1EC1F588DD100CCF677 /* ExtensionForTimeInterval.swift in Sources */,
 				A987D1E11F5860E300CCF677 /* RatingCell.swift in Sources */,
 				A987D1D71F57F86200CCF677 /* MenuManager.swift in Sources */,
 				A987D1DF1F58508700CCF677 /* GameLogic.swift in Sources */,

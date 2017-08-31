@@ -12,12 +12,16 @@ class GameLogic {
     
     static var shared = GameLogic()
     
+    // Works with game map
     var closeIfNeeded: (()->())?
     var deleteCards: (()->())?
     
+    // Works with control panel
     var presentScore: ((Int)->())?
+
     var score: Int = 0
     
+    // Checks if card similar
     func isCardSimilar(cardOne: CardView, cardTwo: CardView) {
         if cardOne.image == cardTwo.image {
             score += 25
@@ -30,13 +34,8 @@ class GameLogic {
         updateScore()
     }
     
+    // Sends current score
     func updateScore() {
         presentScore?(score)
     }
-    
-    
-    /*
-     when add sdore
-     timer
-     */
 }

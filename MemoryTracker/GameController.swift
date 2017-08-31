@@ -29,8 +29,13 @@ class GameController: UIViewController {
         gameMapController.gameOver = { [weak self] in
             self?.saveScore()
         }
+        
+        detailsController.timeOver = { [weak self] in
+            self?.saveScore()
+        }
     }
     
+    // create pause button
     func initPauseButtonLayer() {
         pause.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.6)
         
@@ -63,12 +68,12 @@ class GameController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    //
+    // presents current score
     func showScore(score: Int) {
         detailsController.present(score: Double(score))
     }
     
-    
+    // Save score in rating desk
     func saveScore() {
         let alert = UIAlertController(title: "Save your score", message: "Input your name here", preferredStyle: .alert)
         
