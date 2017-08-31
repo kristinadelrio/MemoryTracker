@@ -11,7 +11,9 @@ import UIKit
 class GameMapController: UIViewController {
     
     @IBOutlet weak var gameScene: UIView!
+    
     var mapManager = MapManager()
+    var openedCard: [CardView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,16 +21,27 @@ class GameMapController: UIViewController {
         putCards()
     }
     
+    // Func for recognizing card
     func onCardTap(sender: UITapGestureRecognizer) {
         if let imageView = sender.view as? CardView {
             if imageView.image == imageView.cardBack {
+                openedCard.count == 2 ? closeCard() : (/* move on */)
+                
                 imageView.setCardFace()
-            } else {
-                imageView.setCardBack()
+                openedCard.append(imageView)
             }
         }
     }
     
+    // closes opened card
+    func closeCard() {
+        openedCard[0].setCardBack()
+        openedCard[1].setCardBack()
+        
+        openedCard = []
+    }
+    
+    // Puts cards in the map
     func putCards(rawCount: Int = 5, columnCount: Int = 4) {
         var xPosition: CGFloat = 0
         var yPosition: CGFloat = 0
@@ -49,6 +62,7 @@ class GameMapController: UIViewController {
         }
     }
     
+    // Generate card inside rect with image face
     func generateCard(with rect: CGRect, imageIndex: Int) -> CardView {
         let card = CardView(frame: rect)
         
