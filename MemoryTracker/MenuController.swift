@@ -7,71 +7,45 @@
 //
 
 import UIKit
-import AVFoundation
 
 class MenuController: UIViewController {
     
     @IBOutlet weak var levelControl: UISegmentedControl!
     @IBOutlet weak var soundButton: UIButton!
-    var audioPlayer = AVAudioPlayer()
+    
+    var menuManager: MenuMeneger!
     
     @IBAction func changeSoundState(_ sender: UIButton) {
-        setSoundIfNeeded()
+        menuManager.soundState = !menuManager.soundState
+        set(soundState: menuManager.soundState)
     }
-
+    
     @IBAction func levelChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set(sender.selectedSegmentIndex, forKey: "levelIndex")
+        menuManager.levelIndex = sender.selectedSegmentIndex
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setElementsDefaultsIfNeeded()
-        setLevelOnControl()
-        initMelody()
-        setSoundIfNeeded()
-    }
-    
-    func setElementsDefaultsIfNeeded() {
-        if UserDefaults.standard.value(forKey: "soundState") as? Bool == nil {
-            UserDefaults.standard.set(false, forKey: "soundState")
-        }
+        menuManager = MenuMeneger()
         
-        if UserDefaults.standard.value(forKey: "levelIndex") as? Int == nil {
-            UserDefaults.standard.set(0, forKey: "levelIndex")
-        }
+        set(levelIndex: menuManager.levelIndex)
+        set(soundState: menuManager.soundState)
     }
     
-    func setLevelOnControl() {
-        if let val = UserDefaults.standard.value(forKey: "levelIndex") as? Int {
-            levelControl.selectedSegmentIndex = val
-        }
-    }
-    
-    func setSoundIfNeeded() {
-        if let soundState = UserDefaults.standard.value(forKey: "soundState") as? Bool {
-            if soundState != true {
-                soundButton.setImage(#imageLiteral(resourceName: "speakerOn"), for: .normal)
-                audioPlayer.play()
-                
-            } else {
-                soundButton.setImage(#imageLiteral(resourceName: "speakerOff"), for: .normal)
-                audioPlayer.stop()
-            }
+    func set(soundState: Bool) {
+        if soundState {
+            soundButton.setImage(#imageLiteral(resourceName: "speakerOn"), for: .normal)
+            menuManager.soundManager.playMusic()
             
-            UserDefaults.standard.set(!soundState, forKey: "soundState")
+        } else {
+            soundButton.setImage(#imageLiteral(resourceName: "speakerOff"), for: .normal)
+            menuManager.soundManager.stopMusic()
         }
     }
     
-    func initMelody() {
-        do {
-            if let musicFile = Bundle.main.path(forResource: "melody", ofType: "mp3") {
-                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: musicFile))
-            }
-            
-        } catch {
-            print(error)
-        }
+    func set(levelIndex: Int) {
+        levelControl.selectedSegmentIndex = levelIndex
     }
 }
 

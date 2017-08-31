@@ -19,6 +19,8 @@
 		A987D1CE1F57481500CCF677 /* PanelControlController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1CD1F57481500CCF677 /* PanelControlController.swift */; };
 		A987D1D01F57492900CCF677 /* GameMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1CF1F57492900CCF677 /* GameMapController.swift */; };
 		A987D1D41F57F7E000CCF677 /* melody.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A987D1D31F57F7E000CCF677 /* melody.mp3 */; };
+		A987D1D71F57F86200CCF677 /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1D61F57F86200CCF677 /* MenuManager.swift */; };
+		A987D1D91F57F9A800CCF677 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1D81F57F9A800CCF677 /* SoundManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		A987D1CD1F57481500CCF677 /* PanelControlController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelControlController.swift; sourceTree = "<group>"; };
 		A987D1CF1F57492900CCF677 /* GameMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMapController.swift; sourceTree = "<group>"; };
 		A987D1D31F57F7E000CCF677 /* melody.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = melody.mp3; sourceTree = "<group>"; };
+		A987D1D61F57F86200CCF677 /* MenuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
+		A987D1D81F57F9A800CCF677 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 			children = (
 				A987D1AE1F57349C00CCF677 /* MenuController.swift */,
 				A987D1B01F57349C00CCF677 /* Main.storyboard */,
+				A987D1D61F57F86200CCF677 /* MenuManager.swift */,
+				A987D1D81F57F9A800CCF677 /* SoundManager.swift */,
 			);
 			name = menu;
 			sourceTree = "<group>";
@@ -207,6 +213,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A987D1D71F57F86200CCF677 /* MenuManager.swift in Sources */,
+				A987D1D91F57F9A800CCF677 /* SoundManager.swift in Sources */,
 				A987D1CE1F57481500CCF677 /* PanelControlController.swift in Sources */,
 				A987D1AF1F57349C00CCF677 /* MenuController.swift in Sources */,
 				A987D1C21F573F0300CCF677 /* GameController.swift in Sources */,
