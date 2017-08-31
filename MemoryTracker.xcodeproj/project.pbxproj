@@ -21,6 +21,8 @@
 		A987D1D41F57F7E000CCF677 /* melody.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A987D1D31F57F7E000CCF677 /* melody.mp3 */; };
 		A987D1D71F57F86200CCF677 /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1D61F57F86200CCF677 /* MenuManager.swift */; };
 		A987D1D91F57F9A800CCF677 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1D81F57F9A800CCF677 /* SoundManager.swift */; };
+		A987D1DB1F5821F200CCF677 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1DA1F5821F200CCF677 /* MapManager.swift */; };
+		A987D1DD1F58406C00CCF677 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1DC1F58406C00CCF677 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		A987D1D31F57F7E000CCF677 /* melody.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = melody.mp3; sourceTree = "<group>"; };
 		A987D1D61F57F86200CCF677 /* MenuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
 		A987D1D81F57F9A800CCF677 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		A987D1DA1F5821F200CCF677 /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		A987D1DC1F58406C00CCF677 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				A987D1C11F573F0300CCF677 /* GameController.swift */,
 				A987D1CD1F57481500CCF677 /* PanelControlController.swift */,
 				A987D1CF1F57492900CCF677 /* GameMapController.swift */,
+				A987D1DA1F5821F200CCF677 /* MapManager.swift */,
+				A987D1DC1F58406C00CCF677 /* CardView.swift */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -217,6 +223,8 @@
 				A987D1D91F57F9A800CCF677 /* SoundManager.swift in Sources */,
 				A987D1CE1F57481500CCF677 /* PanelControlController.swift in Sources */,
 				A987D1AF1F57349C00CCF677 /* MenuController.swift in Sources */,
+				A987D1DD1F58406C00CCF677 /* CardView.swift in Sources */,
+				A987D1DB1F5821F200CCF677 /* MapManager.swift in Sources */,
 				A987D1C21F573F0300CCF677 /* GameController.swift in Sources */,
 				A987D1CB1F5743CC00CCF677 /* RatingController.swift in Sources */,
 				A987D1D01F57492900CCF677 /* GameMapController.swift in Sources */,

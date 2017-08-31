@@ -6,17 +6,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemoryTracker/GameMapController.swift"
-            timestampString = "525869347.627643"
+            timestampString = "525877064.151611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
             endingLineNumber = "23"
-            landmarkName = "tap(wall:)"
+            landmarkName = "tap(sender:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemoryTracker.GameMapController.tap (sender : __ObjC.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "MemoryTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alejandro/Desktop/MemoryTracker/MemoryTracker/GameMapController.swift"
+                  timestampString = "525877972.549278"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemoryTracker.GameMapController.tap (sender : __ObjC.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "MemoryTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alejandro/Desktop/MemoryTracker/MemoryTracker/GameMapController.swift"
+                  timestampString = "525877972.552577"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "211">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
