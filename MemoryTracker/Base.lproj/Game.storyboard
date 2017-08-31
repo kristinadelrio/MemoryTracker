@@ -157,15 +157,34 @@
         <scene sceneID="Ew8-io-z4b">
             <objects>
                 <viewController id="jri-Mu-8OF" customClass="GameMapController" customModule="MemoryTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ycj-ky-Zbg"/>
+                        <viewControllerLayoutGuide type="bottom" id="SF0-MJ-yUu"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xsT-cC-v9r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="647.33333333333326"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVY-mm-IM8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="647.33333333333337"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.98605746030807495" green="0.90932422876358032" blue="0.92102807760238647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SVY-mm-IM8" firstAttribute="top" secondItem="ycj-ky-Zbg" secondAttribute="bottom" id="6sC-2T-RhS"/>
+                            <constraint firstItem="SVY-mm-IM8" firstAttribute="leading" secondItem="xsT-cC-v9r" secondAttribute="leading" id="82e-ma-TEn"/>
+                            <constraint firstAttribute="trailing" secondItem="SVY-mm-IM8" secondAttribute="trailing" id="TNf-1E-2kV"/>
+                            <constraint firstItem="SF0-MJ-yUu" firstAttribute="top" secondItem="SVY-mm-IM8" secondAttribute="bottom" id="Xsy-eN-Zfo"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gameScene" destination="SVY-mm-IM8" id="EgJ-Lx-xvC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8E-wN-4Ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1664" y="231"/>
+            <point key="canvasLocation" x="1663.7681159420292" y="230.70652173913047"/>
         </scene>
     </scenes>
     <resources>
