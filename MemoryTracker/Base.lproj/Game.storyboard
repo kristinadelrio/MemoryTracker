@@ -102,7 +102,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oH-8K-qXC">
                                                 <rect key="frame" x="61.333333333333321" y="0.0" width="54.666666666666679" height="23.999999999999993"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                                <color key="textColor" red="0.18332526090000001" green="0.64323627949999995" blue="0.87216895819999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.18431372549019609" green="0.64313725490196072" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -133,15 +133,26 @@
                                     <action selector="pauseTap:" destination="mV4-Df-wYU" eventType="touchUpInside" id="OQF-6h-ZTQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bU-cQ-xaZ">
+                                <rect key="frame" x="296" y="8" width="30" height="30"/>
+                                <state key="normal" image="replay"/>
+                                <connections>
+                                    <action selector="restartGame:" destination="mV4-Df-wYU" eventType="touchUpInside" id="Vle-FV-7kR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9JS-nr-5hD" firstAttribute="leading" secondItem="qTV-yP-yH6" secondAttribute="leadingMargin" id="DoY-Ec-5V5"/>
                             <constraint firstItem="5Jy-2U-DkG" firstAttribute="top" secondItem="Uj5-JQ-QfV" secondAttribute="bottom" constant="8" symbolic="YES" id="IZK-dB-Atv"/>
                             <constraint firstItem="cv0-OW-ILi" firstAttribute="top" secondItem="Uj5-JQ-QfV" secondAttribute="bottom" constant="8" symbolic="YES" id="TdM-E6-6nM"/>
+                            <constraint firstItem="0bU-cQ-xaZ" firstAttribute="top" secondItem="Uj5-JQ-QfV" secondAttribute="bottom" constant="8" symbolic="YES" id="Vel-O1-kBd"/>
+                            <constraint firstItem="0bU-cQ-xaZ" firstAttribute="height" secondItem="5Jy-2U-DkG" secondAttribute="height" id="Z47-92-12y"/>
                             <constraint firstItem="9JS-nr-5hD" firstAttribute="centerY" secondItem="qTV-yP-yH6" secondAttribute="centerY" id="bYD-yc-3oG"/>
+                            <constraint firstItem="0bU-cQ-xaZ" firstAttribute="width" secondItem="5Jy-2U-DkG" secondAttribute="width" id="bit-Jg-I02"/>
                             <constraint firstItem="cv0-OW-ILi" firstAttribute="leading" secondItem="5Jy-2U-DkG" secondAttribute="trailing" constant="8" symbolic="YES" id="jrp-dW-XZ0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cv0-OW-ILi" secondAttribute="trailingMargin" id="mdI-Qt-2Vo"/>
+                            <constraint firstItem="5Jy-2U-DkG" firstAttribute="leading" secondItem="0bU-cQ-xaZ" secondAttribute="trailing" constant="8" symbolic="YES" id="w6w-yk-acc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -190,5 +201,6 @@
     <resources>
         <image name="home" width="128" height="128"/>
         <image name="pause" width="128" height="128"/>
+        <image name="replay" width="128" height="128"/>
     </resources>
 </document>

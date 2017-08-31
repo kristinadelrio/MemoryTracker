@@ -66,6 +66,19 @@ class GameController: UIViewController {
         detailsController.present(score: Double(score))
     }
     
+    func resrtartGame() {
+        detailsController.stopTimer()
+        GameLogic.shared.score = 0
+        gameMapController.redrawScene()
+        detailsController.scoreLabel.text = "0.0"
+        detailsController.timeLabel.text = "00:00"
+        detailsController.timeConstraints = timeLimit ?? 60.0
+        
+        // BUG: add sleep(2)
+        gameMapController.hideCardFace()
+        detailsController.runTimer()
+    }
+    
     func gameOver() {
         detailsController.stopTimer()
         saveScore()
@@ -131,6 +144,11 @@ class GameController: UIViewController {
         
         detailsController.timeOver = { [weak self] in
             self?.gameOver()
+        }
+        
+        detailsController.onRestartTap = { [weak self] in
+            self?.resrtartGame()
+        
         }
     }
 }

@@ -36,12 +36,26 @@ class GameMapController: UIViewController {
         super.viewDidAppear(animated)
         
         sleep(2)
+        hideCardFace()
+    }
+    
+    func hideCardFace() {
         for subview in gameScene.subviews {
             if let subview = subview as? CardView {
                 subview.setCardBack()
             }
         }
     }
+    
+    func redrawScene() {
+        for subview in gameScene.subviews {
+            subview.removeFromSuperview()
+        }
+        
+        openedCard = []
+        putCardsOnTheDesk()
+    }
+    
     
     // Func for recognizing card
     func onCardTap(sender: UITapGestureRecognizer) {

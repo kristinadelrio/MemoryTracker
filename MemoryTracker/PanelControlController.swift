@@ -12,6 +12,7 @@ class PanelControlController: UIViewController {
     
     var onPauseTap: ((Bool)->())?
     var onHomeTap: (()->())?
+    var onRestartTap: (()->())?
     var timeOver: (()->())?
     
     @IBOutlet weak var scoreLabel: UILabel!
@@ -24,6 +25,8 @@ class PanelControlController: UIViewController {
     
     var timeConstraints = 60.0
  
+
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -58,6 +61,11 @@ class PanelControlController: UIViewController {
     // Shows current score in label
     func present(score: Double) {
         scoreLabel.text = "\(score)"
+    }
+    
+    // sends event that taped on restart
+    @IBAction func restartGame(_ sender: UIButton) {
+        onRestartTap?()
     }
     
     // Sends event that pause taped
