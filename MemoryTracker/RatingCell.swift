@@ -15,8 +15,8 @@ class RatingCell: UITableViewCell {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var score: UILabel!
     
-    func generate(with user: UserScore) {
-        trophy.image = #imageLiteral(resourceName: "trophy")
+    func generate(with user: UserScore, image: UIImage?) {
+        trophy.image = image
         userName.text = user.username
         score.text = "\(user.score)"
         time.text = user.date.timeSinceDate()

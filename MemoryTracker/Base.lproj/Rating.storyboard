@@ -53,18 +53,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ua2-Yu-nbJ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ua2-Yu-nbJ">
                                                     <rect key="frame" x="311" y="12" width="56" height="58"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oj3-Ry-EZ3">
                                                     <rect key="frame" x="8" y="8" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="83X-bH-jFF"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGA-Fo-OhF">
-                                                    <rect key="frame" x="8" y="37" width="34" height="34.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="37" width="26.5" height="34.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26.5" id="Ntm-E2-0LG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -85,9 +91,7 @@
                                                 <constraint firstItem="Ua2-Yu-nbJ" firstAttribute="width" secondItem="gtW-QD-dgS" secondAttribute="width" multiplier="0.15" id="Z79-jL-BXN"/>
                                                 <constraint firstItem="iGA-Fo-OhF" firstAttribute="leading" secondItem="gtW-QD-dgS" secondAttribute="leadingMargin" id="fpc-Kn-Fbz"/>
                                                 <constraint firstItem="WrT-So-RTl" firstAttribute="centerY" secondItem="gtW-QD-dgS" secondAttribute="centerY" id="j2T-j4-9us"/>
-                                                <constraint firstItem="WrT-So-RTl" firstAttribute="leading" relation="lessThanOrEqual" secondItem="iGA-Fo-OhF" secondAttribute="trailing" constant="216" id="rG5-a3-c5y"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Ua2-Yu-nbJ" secondAttribute="bottom" constant="1.5" id="sfs-PS-EdH"/>
-                                                <constraint firstItem="WrT-So-RTl" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Oj3-Ry-EZ3" secondAttribute="trailing" constant="205" id="tAC-vt-Opd"/>
                                                 <constraint firstItem="Ua2-Yu-nbJ" firstAttribute="leading" secondItem="WrT-So-RTl" secondAttribute="trailing" constant="8" symbolic="YES" id="u04-nM-5wH"/>
                                             </constraints>
                                         </tableViewCellContentView>

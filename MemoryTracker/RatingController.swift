@@ -62,8 +62,16 @@ extension RatingController:  UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ratingCell", for: indexPath) as? RatingCell,
             let score = scoreList?[indexPath.row] {
-            cell.generate(with: score)
+            let img: UIImage?
             
+            switch indexPath.row {
+            case 0: img = #imageLiteral(resourceName: "golden-medal")
+            case 1: img = #imageLiteral(resourceName: "silver-medal")
+            case 2: img = #imageLiteral(resourceName: "bronze-medal")
+            default: img = nil
+            }
+            
+            cell.generate(with: score, image: img)
             return cell
         }
         

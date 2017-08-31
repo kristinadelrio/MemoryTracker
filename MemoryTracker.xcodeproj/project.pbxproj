@@ -88,9 +88,9 @@
 		A987D1AB1F57349C00CCF677 /* MemoryTracker */ = {
 			isa = PBXGroup;
 			children = (
+				A987D1C61F573F5D00CCF677 /* SupportingFiles */,
 				A987D1EA1F588DA800CCF677 /* Utilities */,
 				A987D1D51F57F7E600CCF677 /* Music */,
-				A987D1C61F573F5D00CCF677 /* SupportingFiles */,
 				A987D1C51F573F4C00CCF677 /* Classes */,
 			);
 			path = MemoryTracker;
