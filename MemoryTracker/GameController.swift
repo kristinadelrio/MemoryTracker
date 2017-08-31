@@ -21,6 +21,10 @@ class GameController: UIViewController {
         super.viewDidLoad()
         
         initPauseButtonLayer()
+        
+        GameLogic.shared.presentScore = { [weak self] score in
+            self?.showScore(score: score)
+        }
     }
     
     func initPauseButtonLayer() {
@@ -53,6 +57,11 @@ class GameController: UIViewController {
     // Returns to menu page
     func turnToHome() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    // 
+    func showScore(score: Int) {
+        detailsController.present(score: Double(score))
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

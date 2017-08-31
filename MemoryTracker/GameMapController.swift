@@ -14,22 +14,33 @@ class GameMapController: UIViewController {
     
     var mapManager = MapManager()
     var openedCard: [CardView] = []
+    let logic = GameLogic.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        logic.closeIfNeeded = { [weak self] in
+            self?.closeCard()
+        }
+        
+        logic.deleteCards = { [weak self] in
+            self?.deleteCard()
+        }
         
         putCards()
     }
     
     // Func for recognizing card
     func onCardTap(sender: UITapGestureRecognizer) {
-        if let imageView = sender.view as? CardView {
-            if imageView.image == imageView.cardBack {
-                openedCard.count == 2 ? closeCard() : (/* move on */)
-                
-                imageView.setCardFace()
-                openedCard.append(imageView)
+        if let imageView = sender.view as? CardView,
+            imageView.image == imageView.cardBack {
+            
+            if openedCard.count == 2 {
+                logic.isCardSimilar(cardOne: openedCard[0], cardTwo: openedCard[1])
             }
+            
+            imageView.setCardFace()
+            openedCard.append(imageView)
         }
     }
     
@@ -37,6 +48,13 @@ class GameMapController: UIViewController {
     func closeCard() {
         openedCard[0].setCardBack()
         openedCard[1].setCardBack()
+        
+        openedCard = []
+    }
+    
+    func deleteCard() {
+        openedCard[0].removeFromSuperview()
+        openedCard[1].removeFromSuperview()
         
         openedCard = []
     }

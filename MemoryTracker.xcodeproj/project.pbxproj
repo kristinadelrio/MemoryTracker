@@ -23,6 +23,7 @@
 		A987D1D91F57F9A800CCF677 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1D81F57F9A800CCF677 /* SoundManager.swift */; };
 		A987D1DB1F5821F200CCF677 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1DA1F5821F200CCF677 /* MapManager.swift */; };
 		A987D1DD1F58406C00CCF677 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1DC1F58406C00CCF677 /* CardView.swift */; };
+		A987D1DF1F58508700CCF677 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1DE1F58508700CCF677 /* GameLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		A987D1D81F57F9A800CCF677 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		A987D1DA1F5821F200CCF677 /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		A987D1DC1F58406C00CCF677 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		A987D1DE1F58508700CCF677 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				A987D1C41F573F4500CCF677 /* menu */,
 				A987D1C31F573F3D00CCF677 /* game */,
 				A987D1CC1F5743D100CCF677 /* Rating */,
+				A987D1DE1F58508700CCF677 /* GameLogic.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A987D1D71F57F86200CCF677 /* MenuManager.swift in Sources */,
+				A987D1DF1F58508700CCF677 /* GameLogic.swift in Sources */,
 				A987D1D91F57F9A800CCF677 /* SoundManager.swift in Sources */,
 				A987D1CE1F57481500CCF677 /* PanelControlController.swift in Sources */,
 				A987D1AF1F57349C00CCF677 /* MenuController.swift in Sources */,
