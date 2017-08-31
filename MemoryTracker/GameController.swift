@@ -74,7 +74,7 @@ class GameController: UIViewController {
         
         let confirmAction = UIAlertAction(title: "Done", style: .default, handler: { (action) -> Void in
             let nicknameField = alert.textFields?[0]
-            let score = UserScore(username: nicknameField?.text ?? "User", score: 45600)
+            let score = UserScore(username: nicknameField?.text ?? "User", score: GameLogic.shared.score)
             RatingStorage.shared.saveData(score: score)
         })
         

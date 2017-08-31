@@ -9,7 +9,7 @@
 import Foundation
 
 class GameLogic {
-
+    
     static var shared = GameLogic()
     
     var closeIfNeeded: (()->())?
@@ -21,11 +21,13 @@ class GameLogic {
     func isCardSimilar(cardOne: CardView, cardTwo: CardView) {
         if cardOne.image == cardTwo.image {
             score += 25
-            updateScore()
             deleteCards?()
         } else {
+            score -= 5
             closeIfNeeded?()
         }
+        
+        updateScore()
     }
     
     func updateScore() {
@@ -34,7 +36,7 @@ class GameLogic {
     
     
     /*
-     when add sdore 
+     when add sdore
      timer
      */
 }

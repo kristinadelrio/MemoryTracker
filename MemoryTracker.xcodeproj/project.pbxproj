@@ -27,6 +27,7 @@
 		A987D1E11F5860E300CCF677 /* RatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1E01F5860E300CCF677 /* RatingCell.swift */; };
 		A987D1E31F5862E100CCF677 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1E21F5862E100CCF677 /* User.swift */; };
 		A987D1E51F58704300CCF677 /* RatingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1E41F58704300CCF677 /* RatingStorage.swift */; };
+		A987D1E71F587D1100CCF677 /* ExtensionForDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1E61F587D1100CCF677 /* ExtensionForDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		A987D1E01F5860E300CCF677 /* RatingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingCell.swift; sourceTree = "<group>"; };
 		A987D1E21F5862E100CCF677 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A987D1E41F58704300CCF677 /* RatingStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingStorage.swift; sourceTree = "<group>"; };
+		A987D1E61F587D1100CCF677 /* ExtensionForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionForDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				A987D1E01F5860E300CCF677 /* RatingCell.swift */,
 				A987D1E21F5862E100CCF677 /* User.swift */,
 				A987D1E41F58704300CCF677 /* RatingStorage.swift */,
+				A987D1E61F587D1100CCF677 /* ExtensionForDate.swift */,
 			);
 			name = Rating;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				A987D1C21F573F0300CCF677 /* GameController.swift in Sources */,
 				A987D1CB1F5743CC00CCF677 /* RatingController.swift in Sources */,
 				A987D1D01F57492900CCF677 /* GameMapController.swift in Sources */,
+				A987D1E71F587D1100CCF677 /* ExtensionForDate.swift in Sources */,
 				A987D1E51F58704300CCF677 /* RatingStorage.swift in Sources */,
 				A987D1AD1F57349C00CCF677 /* AppDelegate.swift in Sources */,
 			);

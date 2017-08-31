@@ -19,7 +19,7 @@ class RatingCell: UITableViewCell {
         trophy.image = #imageLiteral(resourceName: "trophy")
         userName.text = user.username
         score.text = "\(user.score)"
-        time.text = "\(user.date.timeIntervalSinceNow)"
+        time.text = user.date.timeSinceDate()
     }
 
 }
