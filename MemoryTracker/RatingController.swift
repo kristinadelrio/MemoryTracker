@@ -23,11 +23,16 @@ class RatingController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        scoreList = RatingStorage.shared.loadData()
+    }
+    
     func clearScores() {
         scoreList?.removeAll()
         tableView.reloadData()
-        
-        // delete from storage
+        RatingStorage.shared.removeAll()
     }
     
     /// Creates alert with 2 action OK and Cancel

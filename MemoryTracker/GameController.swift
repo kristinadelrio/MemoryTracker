@@ -9,7 +9,7 @@
 import UIKit
 
 class GameController: UIViewController {
-
+    
     @IBOutlet weak var gameContainer: UIView!
     
     var detailsController: PanelControlController!
@@ -24,6 +24,10 @@ class GameController: UIViewController {
         
         GameLogic.shared.presentScore = { [weak self] score in
             self?.showScore(score: score)
+        }
+        
+        gameMapController.gameOver = { [weak self] in
+            self?.saveScore()
         }
     }
     
@@ -59,11 +63,36 @@ class GameController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    // 
+    //
     func showScore(score: Int) {
         detailsController.present(score: Double(score))
     }
-
+    
+    
+    func saveScore() {
+        let alert = UIAlertController(title: "Save your score", message: "Input your name here", preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "Done", style: .default, handler: { (action) -> Void in
+            let nicknameField = alert.textFields?[0]
+            let score = UserScore(username: nicknameField?.text ?? "User", score: 45600)
+            RatingStorage.shared.saveData(score: score)
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil)
+        
+        alert.addTextField { (nicknameField: UITextField) in
+            nicknameField.placeholder = "your name is..."
+            nicknameField.clearButtonMode = .whileEditing
+            nicknameField.keyboardType = .default
+            nicknameField.keyboardAppearance = .dark
+            
+            alert.addAction(confirmAction)
+            alert.addAction(cancelAction)
+            
+            self.present(alert, animated: true, completion:  nil)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PanelControlControllerSegue",
             let controller = segue.destination as? PanelControlController {
@@ -74,7 +103,7 @@ class GameController: UIViewController {
             prepareGameMapController(controller: controller)
         }
     }
-
+    
     // Binds methods between control panel and game scene
     func prepareGameMapController(controller: GameMapController) {
         gameMapController = controller

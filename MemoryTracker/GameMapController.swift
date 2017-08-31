@@ -16,6 +16,8 @@ class GameMapController: UIViewController {
     var openedCard: [CardView] = []
     let logic = GameLogic.shared
     
+    var gameOver: (()->())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,10 +39,12 @@ class GameMapController: UIViewController {
             
             if openedCard.count == 2 {
                 logic.isCardSimilar(cardOne: openedCard[0], cardTwo: openedCard[1])
+                
             }
             
             imageView.setCardFace()
             openedCard.append(imageView)
+            isGameSceneEmpty()
         }
     }
     
@@ -57,6 +61,13 @@ class GameMapController: UIViewController {
         openedCard[1].removeFromSuperview()
         
         openedCard = []
+
+    }
+    
+    func isGameSceneEmpty() {
+        if gameScene.subviews.count == 2 {
+            gameOver?()
+        }
     }
     
     // Puts cards in the map

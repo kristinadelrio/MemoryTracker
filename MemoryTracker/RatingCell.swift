@@ -18,7 +18,7 @@ class RatingCell: UITableViewCell {
     func generate(with user: UserScore) {
         trophy.image = #imageLiteral(resourceName: "trophy")
         userName.text = user.username
-        score.text = "\(user.score ?? 0)"
+        score.text = "\(user.score)"
         time.text = "\(user.date.timeIntervalSinceNow)"
     }
 
