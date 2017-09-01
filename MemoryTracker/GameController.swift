@@ -30,11 +30,11 @@ class GameController: UIViewController {
     
     // create pause button
     func initPauseButtonLayer() {
-        pause.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.6)
+        pause.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.9)
         
         pause.imageView?.contentMode = .scaleAspectFit
-        pause.tintColor = UIColor(displayP3Red: 0.986, green: 0.909, blue: 0.921, alpha: 1)
-        pause.setImage(#imageLiteral(resourceName: "pause").withRenderingMode(.alwaysTemplate), for: .normal)
+        pause.tintColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.9)
+        pause.setImage(#imageLiteral(resourceName: "pauseScreen").withRenderingMode(.alwaysTemplate), for: .normal)
         
         pause.addTarget(self, action: #selector(turnOffpause), for: .touchUpInside)
     }
