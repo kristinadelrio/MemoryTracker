@@ -17,15 +17,18 @@ class RatingController: UIViewController {
     @IBAction func moveRatingToTrash(_ sender: UIBarButtonItem) {
         createScoreAlert(title: "Do you really want clean scores?" , messege: "Your records will be empty")
     }
-    
+        
     /// Close controller
     @IBAction func close(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         scoreList = RatingStorage.shared.loadData()
     }
     
