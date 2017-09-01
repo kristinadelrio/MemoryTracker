@@ -29,6 +29,8 @@
 		A987D1E51F58704300CCF677 /* RatingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1E41F58704300CCF677 /* RatingStorage.swift */; };
 		A987D1E71F587D1100CCF677 /* ExtensionForDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1E61F587D1100CCF677 /* ExtensionForDate.swift */; };
 		A987D1EC1F588DD100CCF677 /* ExtensionForTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1EB1F588DD100CCF677 /* ExtensionForTimeInterval.swift */; };
+		A9E45FDF1F595FF10091266C /* GameOverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E45FDE1F595FF10091266C /* GameOverView.xib */; };
+		A9E45FE11F5960820091266C /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E45FE01F5960820091266C /* GameOverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		A987D1E41F58704300CCF677 /* RatingStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingStorage.swift; sourceTree = "<group>"; };
 		A987D1E61F587D1100CCF677 /* ExtensionForDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionForDate.swift; sourceTree = "<group>"; };
 		A987D1EB1F588DD100CCF677 /* ExtensionForTimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionForTimeInterval.swift; sourceTree = "<group>"; };
+		A9E45FDE1F595FF10091266C /* GameOverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverView.xib; sourceTree = "<group>"; };
+		A9E45FE01F5960820091266C /* GameOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 				A987D1C31F573F3D00CCF677 /* game */,
 				A987D1CC1F5743D100CCF677 /* Rating */,
 				A987D1DE1F58508700CCF677 /* GameLogic.swift */,
+				A9E45FDE1F595FF10091266C /* GameOverView.xib */,
+				A9E45FE01F5960820091266C /* GameOverView.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -229,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E45FDF1F595FF10091266C /* GameOverView.xib in Resources */,
 				A987D1D41F57F7E000CCF677 /* melody.mp3 in Resources */,
 				A987D1C01F5734E200CCF677 /* Game.storyboard in Resources */,
 				A987D1B71F57349C00CCF677 /* LaunchScreen.storyboard in Resources */,
@@ -250,6 +257,7 @@
 				A987D1E11F5860E300CCF677 /* RatingCell.swift in Sources */,
 				A987D1D71F57F86200CCF677 /* MenuManager.swift in Sources */,
 				A987D1DF1F58508700CCF677 /* GameLogic.swift in Sources */,
+				A9E45FE11F5960820091266C /* GameOverView.swift in Sources */,
 				A987D1D91F57F9A800CCF677 /* SoundManager.swift in Sources */,
 				A987D1CE1F57481500CCF677 /* PanelControlController.swift in Sources */,
 				A987D1AF1F57349C00CCF677 /* MenuController.swift in Sources */,

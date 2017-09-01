@@ -16,6 +16,7 @@ class GameController: UIViewController {
     var gameMapController: GameMapController!
     
     var pause = UIButton()
+    var gameOverView = GameOverView()
     
     var timeLimit: Double?
     
@@ -26,6 +27,10 @@ class GameController: UIViewController {
         
         GameLogic.shared.presentScore = { [weak self] score in
             self?.showScore(score: score)
+        }
+        
+        gameOverView.onRepeatButtTap = { [weak self] in
+            self?.resrtartGame()
         }
     }
     
@@ -69,6 +74,7 @@ class GameController: UIViewController {
     }
     
     func resrtartGame() {
+        gameOverView.removeFromSuperview()
         detailsController.stopTimer()
         GameLogic.shared.score = 0
         GameLogic.shared.totalScore = 0
@@ -83,6 +89,9 @@ class GameController: UIViewController {
     }
     
     func gameOver() {
+        gameOverView.frame = gameContainer.bounds
+        gameContainer.addSubview(gameOverView)
+        
         detailsController.stopTimer()
         if GameLogic.shared.totalScore >= 0 {
             saveScore()
