@@ -22,13 +22,16 @@ class PanelControlController: UIViewController {
     var timer = Timer()
     var isTimerRunning = false
     var isPause: Bool = false
-    
-    var timeConstraints = 60.0
+    var logic = GameLogic.shared
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
         runTimer()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.invalidate()
     }
     
     func runTimer() {
@@ -42,12 +45,12 @@ class PanelControlController: UIViewController {
     
     // updates timer and shows in label
     func presentTimer() {
-        if timeConstraints < 1 {
+        if logic.currentTime < 1 {
             timer.invalidate()
             timeOver?()
         } else {
-            timeConstraints -= 1
-            timeLabel.text = TimeInterval.toString(timeConstraints)
+            logic.currentTime -= 1
+            timeLabel.text = TimeInterval.toString(logic.currentTime)
         }
     }
     
@@ -58,7 +61,7 @@ class PanelControlController: UIViewController {
 
     // Shows current score in label
     func present(score: Double) {
-        scoreLabel.text = "\(round(score * timeConstraints))"
+        scoreLabel.text = "\(round(score))"
     }
     
     // sends event that taped on restart

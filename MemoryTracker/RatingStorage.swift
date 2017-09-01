@@ -13,6 +13,10 @@ class RatingStorage {
     
     var userScores: [UserScore] = []
     
+    init() {
+        userScores = loadData()
+    }
+    
     var fileUrl: URL {
         let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         return url.appendingPathComponent("Rating")

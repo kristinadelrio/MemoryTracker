@@ -17,9 +17,18 @@ class GameLogic {
     var deleteCards: (()->())?
     
     // Works with control panel
-    var presentScore: ((Int)->())?
+    var presentScore: ((Double)->())?
 
-    var score: Int = 0
+    var score = 0.0
+    var totalScore = 0.0
+    
+    var timeLimit = 60.0
+    var currentTime = 60.0
+    
+    func setTimeLimit(time: Double) {
+        currentTime = time
+        timeLimit = time
+    }
     
     // Checks if card similar
     func isCardSimilar(cardOne: CardView, cardTwo: CardView) {
@@ -36,6 +45,7 @@ class GameLogic {
     
     // Sends current score
     func updateScore() {
-        presentScore?(score)
+        totalScore = score * 100 * currentTime / timeLimit
+        presentScore?(totalScore)
     }
 }

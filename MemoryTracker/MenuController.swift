@@ -49,10 +49,9 @@ class MenuController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GameControllerSegue",
-            let controller = segue.destination as? GameController {
+        if segue.identifier == "GameControllerSegue", let _ = segue.destination as? GameController {
             let level = Level(rawValue: levelControl.selectedSegmentIndex) ?? Level.easy
-            controller.timeLimit = timeLimit(with: level)
+            GameLogic.shared.setTimeLimit(time: timeLimit(with: level))
         }
     }
     

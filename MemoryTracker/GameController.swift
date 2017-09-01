@@ -16,6 +16,7 @@ class GameController: UIViewController {
     var gameMapController: GameMapController!
     
     var pause = UIButton()
+    
     var timeLimit: Double?
     
     override func viewDidLoad() {
@@ -58,20 +59,22 @@ class GameController: UIViewController {
     
     // Returns to menu page
     func turnToHome() {
+        GameLogic.shared.score = 0
         dismiss(animated: true, completion: nil)
     }
     
     // Presents current score
-    func showScore(score: Int) {
-        detailsController.present(score: Double(score) * 100.0 / (timeLimit ?? 60))
+    func showScore(score: Double) {
+        detailsController.present(score: score)
     }
     
     func resrtartGame() {
         detailsController.stopTimer()
         GameLogic.shared.score = 0
+        GameLogic.shared.totalScore = 0
         detailsController.scoreLabel.text = "0.0"
         detailsController.timeLabel.text = "00:00"
-        detailsController.timeConstraints = timeLimit ?? 60.0
+        GameLogic.shared.currentTime = GameLogic.shared.timeLimit
         gameMapController.redrawScene()
         
         // BUG: add sleep(2)
@@ -81,7 +84,9 @@ class GameController: UIViewController {
     
     func gameOver() {
         detailsController.stopTimer()
-        saveScore()
+        if GameLogic.shared.totalScore >= 0 {
+            saveScore()
+        }
     }
     
     // Save score in rating desk
@@ -90,7 +95,9 @@ class GameController: UIViewController {
         
         let confirmAction = UIAlertAction(title: "Done", style: .default, handler: { (action) -> Void in
             let nicknameField = alert.textFields?[0]
-            let score = UserScore(username: nicknameField?.text ?? "User", score: GameLogic.shared.score)
+            let score = UserScore(username: nicknameField?.text ?? "User",
+                                  score: Int(GameLogic.shared.totalScore))
+            
             RatingStorage.shared.saveData(score: score)
         })
         
@@ -132,7 +139,6 @@ class GameController: UIViewController {
     // binds methods between details and game scene
     func prepareControlPanelController(controller: PanelControlController) {
         detailsController = controller
-        detailsController.timeConstraints = timeLimit ?? 60.0
         
         detailsController.onPauseTap = { [weak self] state in
             self?.turnOnPause(state: state)
