@@ -24,8 +24,6 @@ class PanelControlController: UIViewController {
     var isPause: Bool = false
     
     var timeConstraints = 60.0
- 
-
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -60,7 +58,7 @@ class PanelControlController: UIViewController {
 
     // Shows current score in label
     func present(score: Double) {
-        scoreLabel.text = "\(score)"
+        scoreLabel.text = "\(round(score * timeConstraints))"
     }
     
     // sends event that taped on restart

@@ -61,18 +61,18 @@ class GameController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    // presents current score
+    // Presents current score
     func showScore(score: Int) {
-        detailsController.present(score: Double(score))
+        detailsController.present(score: Double(score) * 100.0 / (timeLimit ?? 60))
     }
     
     func resrtartGame() {
         detailsController.stopTimer()
         GameLogic.shared.score = 0
-        gameMapController.redrawScene()
         detailsController.scoreLabel.text = "0.0"
         detailsController.timeLabel.text = "00:00"
         detailsController.timeConstraints = timeLimit ?? 60.0
+        gameMapController.redrawScene()
         
         // BUG: add sleep(2)
         gameMapController.hideCardFace()
