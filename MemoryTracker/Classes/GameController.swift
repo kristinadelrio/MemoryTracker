@@ -15,15 +15,13 @@ class GameController: UIViewController {
     var detailsController: PanelControlController!
     var gameMapController: GameMapController!
     
-    var pause = UIButton()
+    var pause = PauseView()
     var gameOverView = GameOverView()
     
     var timeLimit: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        initPauseButtonLayer()
         
         GameLogic.shared.presentScore = { [weak self] score in
             self?.showScore(score: score)
@@ -32,22 +30,16 @@ class GameController: UIViewController {
         gameOverView.onRepeatButtTap = { [weak self] in
             self?.resrtartGame()
         }
-    }
-    
-    // create pause button
-    func initPauseButtonLayer() {
-        pause.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.9)
         
-        pause.imageView?.contentMode = .scaleAspectFit
-        pause.tintColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.9)
-        pause.setImage(#imageLiteral(resourceName: "pauseScreen").withRenderingMode(.alwaysTemplate), for: .normal)
-        
-        pause.addTarget(self, action: #selector(turnOffpause), for: .touchUpInside)
+        pause.onPauseButtTap = { [weak self] in
+            self?.turnOffpause()
+        }
     }
     
     // Turns off pause from game scene
     func turnOffpause() {
         detailsController.isPause = false
+        detailsController.changeTimerState()
         pause.removeFromSuperview()
     }
     

@@ -25,6 +25,8 @@
 		A94BDEF71F5B11E90085E073 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94BDEF01F5B11E90085E073 /* MapManager.swift */; };
 		A94BDEF81F5B11E90085E073 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94BDEF11F5B11E90085E073 /* CardView.swift */; };
 		A94BDEF91F5B11E90085E073 /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94BDEF21F5B11E90085E073 /* MenuManager.swift */; };
+		A94BDEFC1F5B12F60085E073 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94BDEFA1F5B12F60085E073 /* PauseView.swift */; };
+		A94BDEFD1F5B12F60085E073 /* PauseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94BDEFB1F5B12F60085E073 /* PauseView.xib */; };
 		A987D1AD1F57349C00CCF677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987D1AC1F57349C00CCF677 /* AppDelegate.swift */; };
 		A987D1B21F57349C00CCF677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A987D1B01F57349C00CCF677 /* Main.storyboard */; };
 		A987D1B41F57349C00CCF677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A987D1B31F57349C00CCF677 /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		A94BDEF01F5B11E90085E073 /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		A94BDEF11F5B11E90085E073 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		A94BDEF21F5B11E90085E073 /* MenuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
+		A94BDEFA1F5B12F60085E073 /* PauseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		A94BDEFB1F5B12F60085E073 /* PauseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PauseView.xib; sourceTree = "<group>"; };
 		A987D1A91F57349C00CCF677 /* MemoryTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A987D1AC1F57349C00CCF677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A987D1B11F57349C00CCF677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 		A94BDED41F5B109F0085E073 /* XibFiles */ = {
 			isa = PBXGroup;
 			children = (
+				A94BDEFA1F5B12F60085E073 /* PauseView.swift */,
+				A94BDEFB1F5B12F60085E073 /* PauseView.xib */,
 				A94BDEE71F5B11A40085E073 /* GameOverView.swift */,
 				A94BDEE81F5B11A40085E073 /* GameOverView.xib */,
 			);
@@ -234,6 +240,7 @@
 				A987D1B21F57349C00CCF677 /* Main.storyboard in Resources */,
 				A987D1C91F5743B800CCF677 /* Rating.storyboard in Resources */,
 				A94BDEE21F5B11550085E073 /* melody.mp3 in Resources */,
+				A94BDEFD1F5B12F60085E073 /* PauseView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +254,7 @@
 				A94BDEE51F5B11820085E073 /* ExtensionForTimeInterval.swift in Sources */,
 				A94BDEF71F5B11E90085E073 /* MapManager.swift in Sources */,
 				A94BDEE91F5B11A40085E073 /* GameOverView.swift in Sources */,
+				A94BDEFC1F5B12F60085E073 /* PauseView.swift in Sources */,
 				A94BDEE61F5B11820085E073 /* ExtensionForDate.swift in Sources */,
 				A94BDEDE1F5B112B0085E073 /* GameMapController.swift in Sources */,
 				A94BDEDB1F5B112B0085E073 /* MenuController.swift in Sources */,

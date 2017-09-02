@@ -58,7 +58,7 @@ class PanelControlController: UIViewController {
         timer.invalidate()
         isTimerRunning = false
     }
-
+    
     // Shows current score in label
     func present(score: Double) {
         scoreLabel.text = "\(round(score))"
@@ -71,18 +71,21 @@ class PanelControlController: UIViewController {
     
     // Sends event that pause taped
     @IBAction func pauseTap(_ sender: UIButton) {
-        if isPause == false {
+        isPause = !isPause
+        changeTimerState()
+        onPauseTap?(isPause)
+        
+    }
+    
+    func changeTimerState() {
+        if isTimerRunning, isPause {
             stopTimer()
-            isPause = true
             
         } else {
             runTimer()
-            isTimerRunning = true
-            isPause = false
         }
-        
-        onPauseTap?(isPause)
     }
+    
     
     // Sends event that home taped
     @IBAction func homeTap(_ sender: UIButton) {
