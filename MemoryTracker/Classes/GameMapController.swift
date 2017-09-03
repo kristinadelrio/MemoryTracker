@@ -21,7 +21,7 @@ class GameMapController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        putCardsOnTheDesk()
+        initializateGameScene()
         
         logic.closeIfNeeded = { [weak self] in
             self?.closeCard()
@@ -30,13 +30,6 @@ class GameMapController: UIViewController {
         logic.deleteCards = { [weak self] in
             self?.deleteCard()
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        sleep(2)
-        hideCardFace()
     }
     
     func hideCardFace() {
@@ -53,9 +46,17 @@ class GameMapController: UIViewController {
         }
         
         openedCard = []
-        putCardsOnTheDesk()
+        mapManager.shuffleImages()
+        initializateGameScene()
     }
     
+    func initializateGameScene() {
+        putCardsOnTheDesk()
+        
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { [weak self] _ in
+            self?.hideCardFace()
+        }
+    }
     
     // Func for recognizing card
     func onCardTap(sender: UITapGestureRecognizer) {

@@ -74,9 +74,6 @@ class GameController: UIViewController {
         detailsController.timeLabel.text = "00:00"
         GameLogic.shared.currentTime = GameLogic.shared.timeLimit
         gameMapController.redrawScene()
-        
-        // BUG: add sleep(2)
-        gameMapController.hideCardFace()
         detailsController.runTimer()
     }
     
