@@ -19,11 +19,12 @@ class GameController: UIViewController {
     var gameOverView = GameOverView()
     
     var timeLimit: Double?
+    let logic = GameLogic.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GameLogic.shared.presentScore = { [weak self] score in
+        logic.presentScore = { [weak self] score in
             self?.showScore(score: score)
         }
         
@@ -65,29 +66,39 @@ class GameController: UIViewController {
         detailsController.present(score: score)
     }
     
+    /* To restart game we need to give set of instraction for game:
+     *  stop timer, clear labels for details panel control
+     *  clear score nd time in game logic
+     *  redraw scene in map scene
+     *  run timer again
+     */
     func resrtartGame() {
         gameOverView.removeFromSuperview()
+        
         detailsController.stopTimer()
-        GameLogic.shared.score = 0
-        GameLogic.shared.totalScore = 0
         detailsController.scoreLabel.text = "0.0"
         detailsController.timeLabel.text = "00:00"
-        GameLogic.shared.currentTime = GameLogic.shared.timeLimit
+        
+        logic.score = 0
+        logic.totalScore = 0
+        logic.currentTime = logic.timeLimit
+        
         gameMapController.redrawScene()
         detailsController.runTimer()
     }
     
+    // When game over controller stop timer and put gameOver subview
     func gameOver() {
+        detailsController.stopTimer()
         gameOverView.frame = gameContainer.bounds
         gameContainer.addSubview(gameOverView)
-        
-        detailsController.stopTimer()
-        if GameLogic.shared.totalScore >= 0 {
+
+        if logic.totalScore > 0 {
             saveScore()
         }
     }
     
-    // Save score in rating desk
+    /// Saves score in rating desk
     func saveScore() {
         let alert = UIAlertController(title: "Save your score", message: "Input your name here", preferredStyle: .alert)
         
@@ -114,6 +125,8 @@ class GameController: UIViewController {
         }
     }
     
+    // MARK: Preparing block
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PanelControlControllerSegue",
             let controller = segue.destination as? PanelControlController {
@@ -134,7 +147,7 @@ class GameController: UIViewController {
         }
     }
     
-    // binds methods between details and game scene
+    // Binds methods between details and game scene
     func prepareControlPanelController(controller: PanelControlController) {
         detailsController = controller
         
@@ -152,7 +165,6 @@ class GameController: UIViewController {
         
         detailsController.onRestartTap = { [weak self] in
             self?.resrtartGame()
-        
         }
     }
 }
