@@ -15,7 +15,7 @@ class RatingController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func moveRatingToTrash(_ sender: UIBarButtonItem) {
-        createScoreAlert(title: "Do you really want clean scores?" , messege: "Your records will be empty")
+        createScoreAlert(title: "Do you really want clean scores?", messege: "Your records will be empty")
     }
         
     /// Close controller

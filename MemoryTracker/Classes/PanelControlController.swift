@@ -18,7 +18,6 @@ class PanelControlController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
-    // Value that manage time and pause
     var timer = Timer()
     var isTimerRunning = false
     var isPause: Bool = false
@@ -31,40 +30,10 @@ class PanelControlController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        timer.invalidate()
+        stopTimer()
     }
     
-    func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1,
-                                     target: self,
-                                     selector: (#selector(presentTimer)),
-                                     userInfo: nil,
-                                     repeats: true)
-        isTimerRunning = true
-    }
-    
-    // updates timer and shows in label
-    func presentTimer() {
-        if logic.currentTime < 1 {
-            timer.invalidate()
-            timeOver?()
-        } else {
-            logic.currentTime -= 1
-            timeLabel.text = TimeInterval.toString(logic.currentTime)
-        }
-    }
-    
-    func stopTimer() {
-        timer.invalidate()
-        isTimerRunning = false
-    }
-    
-    // Shows current score in label
-    func present(score: Double) {
-        scoreLabel.text = "\(round(score))"
-    }
-    
-    // sends event that taped on restart
+    // Sends event that taped on restart
     @IBAction func restartGame(_ sender: UIButton) {
         onRestartTap?()
     }
@@ -74,22 +43,48 @@ class PanelControlController: UIViewController {
         isPause = !isPause
         changeTimerState()
         onPauseTap?(isPause)
-        
     }
-    
-    func changeTimerState() {
-        if isTimerRunning, isPause {
-            stopTimer()
-            
-        } else {
-            runTimer()
-        }
-    }
-    
-    
+
     // Sends event that home taped
     @IBAction func homeTap(_ sender: UIButton) {
         onHomeTap?()
+    }
+    
+    // Shows current score in label
+    func present(score: Double) {
+        scoreLabel.text = "\(round(score))"
+    }
+    
+    // Starting running timer
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1,
+                                     target: self,
+                                     selector: (#selector(presentTimer)),
+                                     userInfo: nil,
+                                     repeats: true)
+        isTimerRunning = true
+    }
+
+    // Methods for timer invalidation
+    func stopTimer() {
+        timer.invalidate()
+        isTimerRunning = false
+    }
+    
+    // Stop timer if it's running now and pause's switched on
+    func changeTimerState() {
+        isTimerRunning && isPause ? stopTimer() : runTimer()
+    }
+    
+    // Updates timer and shows in label
+    func presentTimer() {
+        if logic.currentTime < 1 {
+            timer.invalidate()
+            timeOver?()
+        } else {
+            logic.currentTime -= 1
+            timeLabel.text = TimeInterval.toString(logic.currentTime)
+        }
     }
 }
 
